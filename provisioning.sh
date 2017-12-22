@@ -93,11 +93,17 @@ sudo apt-get install -y java-common oracle-java8-installer
 sudo apt-get install -y oracle-java8-set-default
 source /etc/profile
 
+# snapd ===================================================
+yes | sudo apt-get install snapd
+
 # phpsotrm ================================================
 # wget https://download-cf.jetbrains.com/webide/PhpStorm-2016.1.2.tar.gz  # confirm ver
 # tar xvf PhpStorm-2016.1.2.tar.gz
 # sudo mv PhpStorm-145.1616.3/ /opt/phpstorm/
 # sudo ln -s /opt/phpstorm/bin/phpstorm.sh /usr/local/bin/phpstorm
+
+sudo snap install phpstorm --classic
+sudo ln -s /snap/bin/phpstorm /usr/local/bin/phpstorm
 
 # rubymine ================================================
 
