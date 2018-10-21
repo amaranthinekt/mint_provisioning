@@ -23,18 +23,18 @@ yes | sudo apt-get install chromium-browser
 yes | sudo apt-get install chromium-browser-l10n
 #yes | sudo apt-get install fcitx-mozc # use mint default installer
 #yes | sudo apt-get install mozc       # use mint default installer
-yes | sudo apt-get install emacs-mozc  # for sublime text
-yes | sudo apt-get install git
-yes | sudo apt-get install clipit
+#yes | sudo apt-get install emacs-mozc  # for sublime text
+#yes | sudo apt-get install git
+#yes | sudo apt-get install clipit
 yes | sudo apt-get install pbcopy
 yes | sudo apt-get install shutter
-yes | sudo apt-get install clementine
+#yes | sudo apt-get install clementine
 yes | sudo apt-get install virtualbox
 yes | sudo apt-get install evince
 yes | sudo apt-get install filezilla
 yes | sudo apt-get install mvp
 yes | sudo apt-get install vagrant
-yes | sudo apt-get install clamtk
+#yes | sudo apt-get install clamtk
 
 # battery-monitor =================================================
 sudo add-apt-repository -y ppa:maateen/battery-monitor
@@ -42,9 +42,15 @@ sudo apt-get update
 yes | sudo apt-get install battery-monitor
 
 # albert ==========================================================
-sudo add-apt-repository -y ppa:nilarimogard/webupd8
-sudo apt-get update
-yes | sudo apt-get install albert
+#sudo add-apt-repository -y ppa:nilarimogard/webupd8
+#sudo apt-get update
+#yes | sudo apt-get install albert
+
+# icon & theme ====================================================
+sudo add-apt-repository ppa:snwh/pulp
+sudo apt-getupdate
+yes | sudo apt-get install paper-icon-theme
+yes | sudo apt-get install arc-theme
 
 # docker ===========================================================
 sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
@@ -81,9 +87,9 @@ yes | sudo apt-get update
 yes | sudo apt-get install spotify-client
 
 # sublime text ============================================
-yes | sudo add-apt-repository ppa:webupd8team/sublime-text-2
-yes | sudo apt-get update
-yes | sudo apt-get install sublime-text
+#yes | sudo add-apt-repository ppa:webupd8team/sublime-text-2
+#yes | sudo apt-get update
+#yes | sudo apt-get install sublime-text
 
 # oracle jdk ==============================================
 yes | sudo apt-get remove openjdk*
@@ -106,7 +112,8 @@ sudo snap install phpstorm --classic
 sudo ln -s /snap/bin/phpstorm /usr/local/bin/phpstorm
 
 # rubymine ================================================
-
+sudo snap install rubymine --classic
+sudo ln -s /snap/bin/rubymine /usr/local/bin/rubymine
 
 
 # fingerprint =============================================
