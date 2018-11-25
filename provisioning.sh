@@ -47,9 +47,11 @@ yes | sudo apt-get install battery-monitor
 #yes | sudo apt-get install albert
 
 # icon & theme ====================================================
-sudo add-apt-repository ppa:snwh/pulp
-sudo apt-getupdate
+yes | sudo add-apt-repository ppa:snwh/pulp
+yes | sudo add-apt-repository ppa:noobslab/themes
+sudo apt-get update
 yes | sudo apt-get install paper-icon-theme
+yes | sudo apt-get install arc-icons
 yes | sudo apt-get install arc-theme
 
 # docker ===========================================================
