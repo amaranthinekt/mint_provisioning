@@ -34,17 +34,17 @@ yes | sudo apt-get install evince
 yes | sudo apt-get install filezilla
 yes | sudo apt-get install mvp
 yes | sudo apt-get install vagrant
-#yes | sudo apt-get install clamtk
+yes | sudo apt-get install clamtk
 
 # battery-monitor =================================================
-sudo add-apt-repository -y ppa:maateen/battery-monitor
-sudo apt-get update
-yes | sudo apt-get install battery-monitor
+#sudo add-apt-repository -y ppa:maateen/battery-monitor
+#sudo apt-get update
+#yes | sudo apt-get install battery-monitor
 
 # albert ==========================================================
-#sudo add-apt-repository -y ppa:nilarimogard/webupd8
-#sudo apt-get update
-#yes | sudo apt-get install albert
+sudo add-apt-repository -y ppa:nilarimogard/webupd8
+sudo apt-get update
+yes | sudo apt-get install albert
 
 # icon & theme ====================================================
 yes | sudo add-apt-repository ppa:snwh/pulp
@@ -53,6 +53,9 @@ sudo apt-get update
 yes | sudo apt-get install paper-icon-theme
 yes | sudo apt-get install arc-icons
 yes | sudo apt-get install arc-theme
+
+wget -O la-captaine.zip https://www.dropbox.com/s/qmzcj8jpx33vthy/la-capitaine.zip?dl=1 && unzip la-captaine.zip && mv la-capitaine ~/.icons
+wget -O Cupertino.zip https://www.dropbox.com/s/s9xxo7fjtv2rwf5/macOS.zip?dl=1 && unzip Cupertino.zip && mv macOS Cupertino && mv Cupertino ~/.icons
 
 # docker ===========================================================
 sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
@@ -104,7 +107,7 @@ source /etc/profile
 # snapd ===================================================
 yes | sudo apt-get install snapd
 
-# phpsotrm ================================================
+# phpstorm ================================================
 # wget https://download-cf.jetbrains.com/webide/PhpStorm-2016.1.2.tar.gz  # confirm ver
 # tar xvf PhpStorm-2016.1.2.tar.gz
 # sudo mv PhpStorm-145.1616.3/ /opt/phpstorm/
@@ -162,17 +165,6 @@ sh ./installer.sh ~/.vim
 # my provision memo
 # 自分の.vimrc落として~/にcp
 # .vim/はコピーしない。
-
-
-# theme ======================================================
-# chrome os theme
-sudo add-apt-repository -y ppa:noobslab/themes
-
-# icon paper
-sudo add-apt-repository -y ppa:snwh/pulp
-
-yes | sudo apt-get update
-yes | sudo apt-get install chrome-android-os-themes paper-icon-theme paper-gtk-theme paper-cursor-themejjjj
 
 
 # docker user settngs =======================================
