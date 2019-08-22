@@ -177,6 +177,9 @@ sudo gpasswd -a $USER docker
 # dockerデーモンを再起動する (CentOS7の場合)
 sudo systemctl restart docker
 
+# Windows との時刻のズレを解消 =================================
+sudo timedatectl set-local-rtc 1
+
 echo 'need restart for complete docker install'
 
 
