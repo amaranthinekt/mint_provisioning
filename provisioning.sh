@@ -25,7 +25,7 @@ yes | sudo apt-get install chromium-browser-l10n
 #yes | sudo apt-get install mozc       # use mint default installer
 #yes | sudo apt-get install emacs-mozc  # for sublime text
 #yes | sudo apt-get install git
-#yes | sudo apt-get install clipit
+yes | sudo apt-get install clipit
 yes | sudo apt-get install pbcopy
 yes | sudo apt-get install shutter
 #yes | sudo apt-get install clementine
@@ -34,7 +34,7 @@ yes | sudo apt-get install evince
 yes | sudo apt-get install filezilla
 yes | sudo apt-get install mvp
 yes | sudo apt-get install vagrant
-yes | sudo apt-get install clamtk
+#yes | sudo apt-get install clamtk
 
 # battery-monitor =================================================
 #sudo add-apt-repository -y ppa:maateen/battery-monitor
@@ -80,16 +80,16 @@ yes | sudo apt-get install caffeine
 
 # spotify ============================================================
 # 1. Add the Spotify repository signing keys to be able to verify downloaded packages
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886 0DF731E45CE24F27EEEB1450EFDC8610341D9410
+#sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886 0DF731E45CE24F27EEEB1450EFDC8610341D9410
 
-# 2. Add the Spotify repository
-echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
+## 2. Add the Spotify repository
+#echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
 
 # 3. Update list of available packages
-yes | sudo apt-get update
+#yes | sudo apt-get update
 
 # 4. Install Spotify
-yes | sudo apt-get install spotify-client
+#yes | sudo apt-get install spotify-client
 
 # sublime text ============================================
 #yes | sudo add-apt-repository ppa:webupd8team/sublime-text-2
@@ -97,12 +97,12 @@ yes | sudo apt-get install spotify-client
 #yes | sudo apt-get install sublime-text
 
 # oracle jdk ==============================================
-yes | sudo apt-get remove openjdk*
-yes | sudo add-apt-repository -y ppa:webupd8team/java
-yes | sudo apt-get update
-sudo apt-get install -y java-common oracle-java8-installer
-sudo apt-get install -y oracle-java8-set-default
-source /etc/profile
+#yes | sudo apt-get remove openjdk*
+#yes | sudo add-apt-repository -y ppa:webupd8team/java
+#yes | sudo apt-get update
+#sudo apt-get install -y java-common oracle-java8-installer
+#sudo apt-get install -y oracle-java8-set-default
+#source /etc/profile
 
 # snapd ===================================================
 yes | sudo apt-get install snapd
@@ -122,9 +122,9 @@ sudo ln -s /snap/bin/rubymine /usr/local/bin/rubymine
 
 
 # fingerprint =============================================
-yes | sudo apt-add-repository -y ppa:fingerprint/fingerprint-gui
-yes | sudo apt-get update
-yes | sudo apt-get install libbsapi policykit-1-fingerprint-gui fingerprint-gui
+#yes | sudo apt-add-repository -y ppa:fingerprint/fingerprint-gui
+#yes | sudo apt-get update
+#yes | sudo apt-get install libbsapi policykit-1-fingerprint-gui fingerprint-gui
 
 # but now 2017/08/05, there is not fingerprint device driver for linux
 
@@ -166,6 +166,13 @@ sh ./installer.sh ~/.vim
 # 自分の.vimrc落として~/にcp
 # .vim/はコピーしない。
 
+# vscode ====================================================
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+yes | sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
+yes | sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+yes | sudo apt-get update
+yes | sudo apt-get install code
+
 
 # docker user settngs =======================================
 # dockerグループがなければ作る
@@ -179,6 +186,14 @@ sudo systemctl restart docker
 
 # Windows との時刻のズレを解消 =================================
 sudo timedatectl set-local-rtc 1
+
+# powertop and tlp =============================================
+yes | sudo apt-get install powertop
+yes | sudo powertop --auto-tune
+
+yes | sudo add-apt-repository ppa:linrunner/tlp
+yes | sudo apt-get update
+yes | sudo apt-get install tlp tlp-rdw
 
 echo 'need restart for complete docker install'
 
