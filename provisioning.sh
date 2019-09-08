@@ -42,8 +42,10 @@ yes | sudo apt-get install vagrant
 #yes | sudo apt-get install battery-monitor
 
 # albert ==========================================================
-sudo add-apt-repository -y ppa:nilarimogard/webupd8
-sudo apt-get update
+yes | sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_18.04/ /' > /etc/apt/sources.list.d/home:manuelschneid3r.list"
+wget -nv https://download.opensuse.org/repositories/home:manuelschneid3r/xUbuntu_18.04/Release.key -O Release.key
+yes | sudo apt-key add - < Release.key
+yes | sudo apt-get update
 yes | sudo apt-get install albert
 
 # icon & theme ====================================================
