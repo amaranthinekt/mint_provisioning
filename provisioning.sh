@@ -60,9 +60,9 @@ wget -O la-captaine.zip https://www.dropbox.com/s/qmzcj8jpx33vthy/la-capitaine.z
 wget -O Cupertino.zip https://www.dropbox.com/s/s9xxo7fjtv2rwf5/macOS.zip?dl=1 && unzip Cupertino.zip && mv macOS Cupertino && mv Cupertino ~/.icons
 
 # docker ===========================================================
-sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
+sudo apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable"
+echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable" > /etc/apt/sources.list.d/docker.list
 yes | sudo apt-get update
 yes | sudo apt-get install docker-ce
 
